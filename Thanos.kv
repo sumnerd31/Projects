@@ -1,0 +1,49 @@
+#:kivy 1.10.1
+#:import Factory kivy.factory.Factory
+<Controller>:
+    label_wid: custom_label
+    save_wid: save_me
+
+    #Adds the background canvas with an image 
+    canvas.before:
+        Rectangle:
+            pos: self.pos
+            size: self.size
+            source: '/Users/brandonsumner/Documents/SourceImages/gradient.jpg'
+    GridLayout:
+        rows:4
+        cols:2
+        Label:
+            text: 'Shingetsu.'
+            id: custom_label
+        TextInput:
+            id: save_me
+            text: ''
+            font_size: '20sp'
+            height: self.height
+            width: self.width
+            keyboard_suggestions: 
+        #AnchorLayout:
+            #anchor_x: 'right'
+            #anchor_y: 'bottom'
+            #padding: 2
+        Button:
+            font_size: '12sp'
+            size_hint: .1,.1
+            #background_normal: 'cleanbuttonbg.png'
+            #background_down: 'buttonhighlight.png'
+            text: 'Exit'
+            on_press: root.do_action()
+        Button:
+            font_size: '12sp'
+            id: save_me
+            size_hint: .1,.1
+            #background_normal: 'cleanbuttonbg.png'
+            #background_down: 'buttonhighlight.png'
+            text: 'Submit'
+            on_press: root.warning_popup()
+
+
+
+
+        
